@@ -2,6 +2,8 @@ const express = require('express');
 // Import and require mysql2
 const mysql = require('mysql2');
 
+// const inquirer = require('inquirer');
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -26,6 +28,7 @@ const db = mysql.createConnection(
 db.query('SELECT * FROM employee', function (err, results) {
   console.log(results);
 });
+
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
